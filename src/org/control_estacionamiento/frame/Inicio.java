@@ -5,6 +5,8 @@
  */
 package org.control_estacionamiento.frame;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author dafuentes
@@ -96,6 +98,10 @@ public class Inicio extends javax.swing.JFrame {
                 new Inicio().setVisible(true);
             }
         });
+    }
+    
+     public void verEspacio (String espacio) {
+        JOptionPane.showMessageDialog(this, "Parqueos disponibles  "+espacio);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
