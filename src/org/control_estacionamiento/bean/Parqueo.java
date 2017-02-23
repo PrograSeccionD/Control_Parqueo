@@ -12,7 +12,7 @@ package org.control_estacionamiento.bean;
 public class Parqueo {
     
     private int id;
-    private double disponible;
+    private boolean disponible;
     private String descripcion;
     private Ubicacion ubicacion;
     
@@ -20,8 +20,9 @@ public class Parqueo {
         
     }
     
-    public Parqueo(int id, double disponible, Ubicacion ubicacion) {
+    public Parqueo(int id, String descripcion,boolean disponible, Ubicacion ubicacion) {
         this.id = id;
+        this.descripcion = descripcion;
         this.disponible = disponible;
         this.ubicacion = ubicacion;
     }
@@ -34,12 +35,20 @@ public class Parqueo {
         this.id = id;
     }
 
-    public double getDisponible() {
+    public boolean isDisponible() {
         return disponible;
     }
 
-    public void setDisponible(double disponible) {
+    public void setDisponible(boolean disponible) {
         this.disponible = disponible;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Ubicacion getUbicacion() {
@@ -50,13 +59,7 @@ public class Parqueo {
         this.ubicacion = ubicacion;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
+  
     
     
 }

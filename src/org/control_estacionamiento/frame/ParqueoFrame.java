@@ -5,36 +5,25 @@
  */
 package org.control_estacionamiento.frame;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
+import javax.swing.JPanel;
+import org.control_estacionamiento.bean.Parqueo;
 import org.control_estacionamiento.bean.Ubicacion;
-import org.control_estacionamiento.controlador.ControladorUbicacion;
+import org.control_estacionamiento.controlador.ControladorParqueo;
 
 /**
  *
  * @author dafuentes
  */
-public class Inicio extends javax.swing.JFrame {
-    
-    private final static int button_width   =   200;        // button width
-    private final static int button_height  =   140;        // button height
-    private final static int horizontalGap  =   10;         // horizontal gap in button
-    private final static int verticalGap    =   10;         // verticle gap in button
-    private final static int numberOfColumns=   4;          // number of colums in the button panel
-    private final static int fontSize       =   11;         // font size of button name
-    private final static int fontType       =   Font.BOLD;  // font type
-    private final static String fontName    =   "Thoma";    // font name
-    private final static Color  fontColor   =   new Color(0, 51, 255);  // font colot
-    ControladorUbicacion controlador = new ControladorUbicacion().getInstance();
+public class ParqueoFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewJFrame
+     * Creates new form Parqueo
      */
-    public Inicio() {
+    public ParqueoFrame() {
         initComponents();
     }
 
@@ -50,34 +39,29 @@ public class Inicio extends javax.swing.JFrame {
         pnl_menu = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(1000, 100));
 
-        pnl_menu.setPreferredSize(new java.awt.Dimension(965, 500));
         pnl_menu.setLayout(new java.awt.GridLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(310, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(219, Short.MAX_VALUE)
+                .addComponent(pnl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(757, Short.MAX_VALUE))
+                .addGap(80, 80, 80)
+                .addComponent(pnl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
-         iniciar();
-    }   
+
     /**
      * @param args the command line arguments
      */
@@ -95,39 +79,32 @@ public class Inicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ParqueoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ParqueoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ParqueoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ParqueoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicio().setVisible(true);
+                new ParqueoFrame().setVisible(true);
             }
         });
     }
     
-    public void iniciar() {
-        pnl_menu.removeAll();
-        repaint();
-        ControladorUbicacion controlador = new ControladorUbicacion().getInstance();
-        JButton[] buttons = new JButton[controlador.getListado().size()];
+    public JPanel obtenerPosiciones(Ubicacion ubicacion, Inicio inicio) {
+        ControladorParqueo controlador = new ControladorParqueo().getInstance();
+        //System.out.println(controlador.getListado(ubicacion).size());
+        JButton[] buttons = new JButton[controlador.getListado(ubicacion).size() + 1];
         int i = 0;
-        for(Ubicacion test: controlador.getListado() ) {
-            buttons[i]  = new JButton(test.getDescripcion() +" - DISPONIBLE: " + test.getCantidadDisponible());
+        for(Parqueo test: controlador.getListado(ubicacion)) {
+            buttons[i]  = new JButton(test.getDescripcion() +" - ESTADO: " + test.isDisponible());
             buttons[i].setVerticalTextPosition(AbstractButton.BOTTOM);
             buttons[i].setHorizontalTextPosition(AbstractButton.CENTER);
 
@@ -140,29 +117,29 @@ public class Inicio extends javax.swing.JFrame {
 
                 public void actionPerformed(ActionEvent e) {
                    String choice = e.getActionCommand();
-                   verEspacio(choice);
                 }
             });       
             pnl_menu.add(buttons[i]);
             i++;
         }
-        pnl_menu.revalidate();
-        pnl_menu.repaint();
-        //pack();
+        buttons[i]  = new JButton("Regresar");
+        buttons[i].setVerticalTextPosition(AbstractButton.BOTTOM);
+        buttons[i].setHorizontalTextPosition(AbstractButton.CENTER);
+
+        buttons[i].setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buttons[i].setFont(new java.awt.Font("Tahoma", 1, 13));
+        buttons[i].setForeground(new java.awt.Color(0, 51, 255));
+
+        buttons[i].addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+               inicio.iniciar();
+            }
+        });       
+        pnl_menu.add(buttons[i]);
+
+      return pnl_menu;  
     }
-    
-    public void verEspacio(String id) {
-        this.pnl_menu.removeAll();
-        repaint();
-        Ubicacion ubicacion = controlador.buscarUbicacion(Integer.parseInt(id));
-        ParqueoFrame parqueo = new ParqueoFrame();
-        //System.out.println(ubicacion.getDescripcion());
-        this.pnl_menu.add(parqueo.obtenerPosiciones(ubicacion, this)); 
-        this.pnl_menu.setSize(1000,500);
-        this.pnl_menu.revalidate();
-        this.pnl_menu.repaint();
-    };
-        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel pnl_menu;
