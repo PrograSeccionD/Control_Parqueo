@@ -7,9 +7,11 @@ package org.control_estacionamiento.frame;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.AbstractButton;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import org.control_estacionamiento.bean.Ubicacion;
 import org.control_estacionamiento.controlador.ControladorUbicacion;
@@ -36,6 +38,8 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
+        System.out.println(this.getClass());
+        //Image image = new ImageIcon(this.getClass().getResource("carl.png")).getImage();
     }
 
     /**
