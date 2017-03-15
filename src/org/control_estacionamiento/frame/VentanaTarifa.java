@@ -19,7 +19,6 @@ import org.control_estacionamiento.bean.Tarifa;
  */
 public class VentanaTarifa extends javax.swing.JDialog {
 
-    private JFormattedTextField txt_placa;
 
     /**
      * Creates new form VentanaTarifa
@@ -27,7 +26,9 @@ public class VentanaTarifa extends javax.swing.JDialog {
     public VentanaTarifa(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        agregarComponente();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        this.setSize(425, 335);  
         this.setVisible(true);
     }
 
@@ -40,31 +41,83 @@ public class VentanaTarifa extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnl_menu = new javax.swing.JPanel();
+        lbl_placa = new javax.swing.JLabel();
+        txt_tarifa = new javax.swing.JTextField();
+        btn_guardar = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        pnl_menu.setLayout(new java.awt.GridLayout(2, 2, 10, 10));
+        lbl_placa.setText("PLACA");
+
+        txt_tarifa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_tarifaActionPerformed(evt);
+            }
+        });
+
+        btn_guardar.setText("Guardar");
+        btn_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardarActionPerformed(evt);
+            }
+        });
+
+        btn_cancelar.setText("Cancelar");
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(pnl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbl_placa, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_guardar))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_cancelar)
+                    .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(pnl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_placa, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(96, 96, 96)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_cancelar)
+                    .addComponent(btn_guardar))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txt_tarifaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tarifaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_tarifaActionPerformed
+
+    private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
+       Tarifa t = new Tarifa();
+       int tarifa = 0;
+       if (!txt_tarifa.getText().equals("")) {
+            tarifa = Integer.parseInt(txt_tarifa.getText());
+       } 
+       t.setTarifa(tarifa);
+    }//GEN-LAST:event_btn_guardarActionPerformed
+
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,44 +160,11 @@ public class VentanaTarifa extends javax.swing.JDialog {
             }
         });
     }
-    
-    public void agregarComponente() {
-        this.setResizable(false);
-        this.setLocationRelativeTo(null);
-        this.setSize(425, 335);
-        // PLACA
-        JLabel lbl_placa = new JLabel("TARIFA",SwingConstants.CENTER);
-        txt_placa = new JFormattedTextField();
-        pnl_menu.add(lbl_placa);
-        pnl_menu.add(txt_placa);
-        
-        JButton btn_guardar = new JButton("Guardar");
-        btn_guardar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-               btnGuardarActionPerformed(e);
-            }
-        });   
-        JButton btn_cancelar = new JButton("Cancelar");
-        btn_cancelar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btnCancelarActionPerformed(e);
-            }
-        });   
-        pnl_menu.add(btn_guardar);
-        pnl_menu.add(btn_cancelar);
-    }
 
-    
-    public void btnCancelarActionPerformed(ActionEvent evt) {
-        this.dispose();
-    }
-    public void btnGuardarActionPerformed(ActionEvent evt) {
-       Tarifa t = new Tarifa();
-       int hola = Integer.parseInt(txt_placa.getText());
-       t.setTarifa(hola);
-       this.dispose();
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel pnl_menu;
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_guardar;
+    private javax.swing.JLabel lbl_placa;
+    private javax.swing.JTextField txt_tarifa;
     // End of variables declaration//GEN-END:variables
 }

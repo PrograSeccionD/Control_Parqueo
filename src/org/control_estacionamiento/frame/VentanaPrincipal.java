@@ -144,7 +144,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
     private void btnTarifaActionPerformed(ActionEvent evt) {
         VentanaTarifa ventanaTarifa = new VentanaTarifa(this, true);
-        ventanaTarifa.agregarComponente();
     }
     
     private void btnReporteActionPerformed(ActionEvent evt) {
