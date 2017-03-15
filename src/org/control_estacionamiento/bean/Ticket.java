@@ -18,18 +18,19 @@ public class Ticket {
     private Timestamp horaEntrada;
     private Timestamp horaSalida;
     private double tarifa;
-    private Ubicacion ubicacion;
+    private Parqueo parqueo;
+    
     
     public Ticket () {
     
     }
-    public Ticket(int id, String placa,Timestamp horaEntrada, Timestamp horaSalida, double tarifa, Ubicacion ubicacion) {
+    public Ticket(int id, String placa,Timestamp horaEntrada, Timestamp horaSalida, double tarifa, Parqueo parqueo) {
         this.id = id;
         this.placa = placa;
         this.horaEntrada = horaEntrada;
         this.horaSalida = horaSalida;
         this.tarifa = tarifa;
-        this.ubicacion = ubicacion;
+        this.parqueo = parqueo;
     }
     
     public int getId() {
@@ -72,12 +73,12 @@ public class Ticket {
         this.tarifa = tarifa;
     }
 
-    public Ubicacion getUbicacion() {
-        return ubicacion;
+    public Parqueo getParqueo() {
+        return parqueo;
     }
 
-    public void setUbicacion(Ubicacion ubicacion) {
-        this.ubicacion = ubicacion;
+    public void setParqueo(Parqueo parqueo) {
+        this.parqueo = parqueo;
     }
    
 }

@@ -27,6 +27,10 @@ public class ControladorUbicacion {
         listadoUbicacion.add(ubicacion);
     }
     
+    public Ubicacion buscarUbicacion (int id) {
+        return listadoUbicacion.get(id);
+    }
+    
     public ArrayList<Ubicacion> getListado() {
         return listadoUbicacion;
     }
