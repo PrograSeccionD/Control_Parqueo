@@ -113,6 +113,7 @@ public class VentanaTarifa extends javax.swing.JDialog {
             tarifa = Integer.parseInt(txt_tarifa.getText());
        } 
        t.setTarifa(tarifa);
+       this.dispose();
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed

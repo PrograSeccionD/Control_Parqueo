@@ -32,6 +32,18 @@ public class ControladorTicket {
         }
         return result;
     }
+    
+    public ArrayList<Ticket> getListadoPorSotano(int id) {
+        ArrayList<Ticket> result = new ArrayList<Ticket>();
+        for (Ticket t : listadoTicket) {
+          if (t.getParqueo().getUbicacion().getId() == id && !t.getParqueo().isDisponible()) {
+              result.add(t);
+          }
+        }
+        return result;
+    }
+    
+    
 
     public void setListadoTicket(ArrayList<Ticket> listadoTicket) {
         this.listadoTicket = listadoTicket;

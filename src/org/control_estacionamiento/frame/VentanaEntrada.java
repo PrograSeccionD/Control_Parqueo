@@ -27,8 +27,6 @@ import org.control_estacionamiento.controlador.ControladorTicket;
 public class VentanaEntrada extends javax.swing.JDialog {
     
     protected SimpleDateFormat timeFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
-    private JFormattedTextField txt_entrada;
-    private JFormattedTextField txt_placa;
     private Parqueo parqueo_disponible;
     private Date currentTime;
     /**
@@ -50,38 +48,110 @@ public class VentanaEntrada extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnl_menu = new javax.swing.JPanel();
-        pnl_accion = new javax.swing.JPanel();
+        lbl_placa = new javax.swing.JLabel();
+        lbl_entrada = new javax.swing.JLabel();
+        lbl_tarifa = new javax.swing.JLabel();
+        lbl_parqueo = new javax.swing.JLabel();
+        txt_placa = new javax.swing.JFormattedTextField();
+        txt_parqueo = new javax.swing.JFormattedTextField();
+        txt_entrada = new javax.swing.JFormattedTextField();
+        txt_tarifa = new javax.swing.JFormattedTextField();
+        btn_guardar = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        pnl_menu.setLayout(new java.awt.GridLayout(5, 2, 10, 5));
+        lbl_placa.setText("PLACA");
 
-        pnl_accion.setLayout(new java.awt.GridLayout(1, 0, 2, 0));
+        lbl_entrada.setText("FECHA Y HORA");
+
+        lbl_tarifa.setText("TARIFA");
+
+        lbl_parqueo.setText("PARQUEO ASIGNADO");
+
+        txt_entrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_entradaActionPerformed(evt);
+            }
+        });
+
+        btn_guardar.setText("Guardar");
+        btn_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardarActionPerformed(evt);
+            }
+        });
+
+        btn_cancelar.setText("Cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnl_menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnl_accion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(392, Short.MAX_VALUE))
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbl_parqueo, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_parqueo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lbl_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_placa, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_placa, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(txt_entrada))))
+                .addGap(128, 128, 128))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(btn_guardar)
+                .addGap(18, 18, 18)
+                .addComponent(btn_cancelar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
-                .addComponent(pnl_accion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_placa)
+                    .addComponent(txt_placa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_entrada)
+                    .addComponent(txt_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_tarifa)
+                    .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_parqueo)
+                    .addComponent(txt_parqueo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_guardar)
+                    .addComponent(btn_cancelar))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txt_entradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_entradaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_entradaActionPerformed
+
+    private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_guardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,38 +200,20 @@ public class VentanaEntrada extends javax.swing.JDialog {
         this.setLocationRelativeTo(null);
         this.setSize(425, 335);
         
-        // PLACA
-        JLabel lbl_placa = new JLabel("PLACA",SwingConstants.CENTER);
-        txt_placa = new JFormattedTextField();
-        pnl_menu.add(lbl_placa);
-        pnl_menu.add(txt_placa);
-        
         // HORA ENTRADA
-        JLabel lbl_entrada = new JLabel("FECHA Y HORA",SwingConstants.CENTER);
-        txt_entrada = new JFormattedTextField();
         Calendar currentCalendar = Calendar.getInstance();
         currentTime = currentCalendar.getTime();
         txt_entrada.setValue(timeFormat.format(currentTime));
         txt_entrada.setEditable(false);
-        pnl_menu.add(lbl_entrada);
-        pnl_menu.add(txt_entrada);
         
         // TARIFA
-        JLabel lbl_tarifa = new JLabel("TARIFA",SwingConstants.CENTER);
-        JFormattedTextField txt_tarifa = new JFormattedTextField();
         txt_tarifa.setValue(Tarifa.getTarifa());
         txt_tarifa.setEditable(false);
         
-        pnl_menu.add(lbl_tarifa);
-        pnl_menu.add(txt_tarifa);
-        
         // PARQUEO
-        JLabel lbl_parqueo = new JLabel("PARQUEO ASIGNADO",SwingConstants.CENTER);
-        
         ControladorParqueo ctl_parqueo = new ControladorParqueo().getInstance();
         parqueo_disponible = ctl_parqueo.getParqueoDisponible();
-        JFormattedTextField txt_parqueo = new JFormattedTextField();
-        JButton btn_guardar = new JButton("Guardar");
+
         btn_guardar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                btnGuardarActionPerformed(e);
@@ -175,18 +227,12 @@ public class VentanaEntrada extends javax.swing.JDialog {
             txt_parqueo.setValue("No hay parqueos");
         }
         txt_parqueo.setEditable(false);
-        pnl_menu.add(lbl_parqueo);
-        pnl_menu.add(txt_parqueo);
         
-        
-        JButton btn_cancelar = new JButton("Cancelar");
         btn_cancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                btnCancelarActionPerformed(e);
             }
         });   
-        pnl_accion.add(btn_guardar);
-        pnl_accion.add(btn_cancelar);
     }
     
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,7 +255,15 @@ public class VentanaEntrada extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel pnl_accion;
-    private javax.swing.JPanel pnl_menu;
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_guardar;
+    private javax.swing.JLabel lbl_entrada;
+    private javax.swing.JLabel lbl_parqueo;
+    private javax.swing.JLabel lbl_placa;
+    private javax.swing.JLabel lbl_tarifa;
+    private javax.swing.JFormattedTextField txt_entrada;
+    private javax.swing.JFormattedTextField txt_parqueo;
+    private javax.swing.JFormattedTextField txt_placa;
+    private javax.swing.JFormattedTextField txt_tarifa;
     // End of variables declaration//GEN-END:variables
 }

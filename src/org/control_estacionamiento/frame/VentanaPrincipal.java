@@ -33,31 +33,106 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnl_menu = new javax.swing.JPanel();
+        btn_reporte = new javax.swing.JButton();
+        btn_salida = new javax.swing.JButton();
+        btn_parqueo = new javax.swing.JButton();
+        btn_ingreso = new javax.swing.JButton();
+        btn_tarifa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        pnl_menu.setLayout(new java.awt.GridLayout(3, 3, 5, 5));
+        btn_reporte.setText("REPORTE");
+        btn_reporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_reporteActionPerformed(evt);
+            }
+        });
+
+        btn_salida.setText("NUEVA SALIDA");
+        btn_salida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salidaActionPerformed(evt);
+            }
+        });
+
+        btn_parqueo.setText("VER PARQUEOS");
+        btn_parqueo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_parqueoActionPerformed(evt);
+            }
+        });
+
+        btn_ingreso.setText("NUEVO INGRESO");
+        btn_ingreso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresoActionPerformed(evt);
+            }
+        });
+
+        btn_tarifa.setText("TARIFA");
+        btn_tarifa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tarifaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnl_menu, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_reporte, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_parqueo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_salida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(btn_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_salida, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_reporte, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                    .addComponent(btn_parqueo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(btn_tarifa, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_reporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_reporteActionPerformed
+
+    private void btn_salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_salidaActionPerformed
+
+    private void btn_parqueoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_parqueoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_parqueoActionPerformed
+
+    private void btn_ingresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ingresoActionPerformed
+
+    private void btn_tarifaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tarifaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_tarifaActionPerformed
     
     /**
      * @param args the command line arguments
@@ -95,41 +170,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
     
     public void agregarComponente() {
-        JButton btn_ingreso = new JButton("Nuevo Ingreso");	
         btn_ingreso.setPreferredSize(new Dimension(40, 40));
         btn_ingreso.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                btnEntradaActionPerformed(e);
             }
         });   
-        JButton btn_salida = new JButton("Nueva Salida");
 	btn_salida.setPreferredSize(new Dimension(40, 40));
         btn_salida.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                btnSalidaActionPerformed(e);
             }
         });
-        JButton btn_reporte = new JButton("Reporte");		
+        
 	btn_reporte.setPreferredSize(new Dimension(40, 40));
         btn_reporte.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                btnReporteActionPerformed(e);
             }
         });   
-        JButton btn_parqueo = new JButton("Ver Parqueos");
 	btn_parqueo.setPreferredSize(new Dimension(40, 40));
-        JButton btn_tarifa = new JButton("Tarifa");
+        btn_parqueo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                btnParqueoActionPerformed(e);
+            }
+        });   
+        
 	btn_tarifa.setPreferredSize(new Dimension(40, 40));
         btn_tarifa.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                btnTarifaActionPerformed(e);
             }
         });   
-        pnl_menu.add(btn_ingreso);
-	pnl_menu.add(btn_salida);
-	pnl_menu.add(btn_reporte);
-	pnl_menu.add(btn_parqueo);
-        pnl_menu.add(btn_tarifa);
     }
     
     private void btnEntradaActionPerformed(ActionEvent evt) {
@@ -150,8 +222,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaReporte ventanaReporte = new VentanaReporte(this, true);
         ventanaReporte.agregarComponente();
     }
+    
+    private void btnParqueoActionPerformed(ActionEvent evt) {
+       VentanaParqueo ventanaParqueo = new VentanaParqueo();
+       ventanaParqueo.agregarComponente();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel pnl_menu;
+    private javax.swing.JButton btn_ingreso;
+    private javax.swing.JButton btn_parqueo;
+    private javax.swing.JButton btn_reporte;
+    private javax.swing.JButton btn_salida;
+    private javax.swing.JButton btn_tarifa;
     // End of variables declaration//GEN-END:variables
 }
