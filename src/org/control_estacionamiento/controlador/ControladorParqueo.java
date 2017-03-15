@@ -39,4 +39,12 @@ public class ControladorParqueo {
         return result;
     }
     
+    public Parqueo getParqueoDisponible() {
+        for (Parqueo parqueo : listadoParqueo) {
+            if (parqueo.isDisponible()) {
+                return parqueo;
+            }
+        }
+        return null;
+    }
 }
