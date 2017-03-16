@@ -18,8 +18,8 @@ public class Sotano3 extends javax.swing.JDialog {
     /**
      * Creates new form Sotano3
      */
-    public Sotano3(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public Sotano3(/*ava.awt.Frame parent, boolean modal*/) {
+       // super(parent, modal);
         initComponents();
         this.mostrar(1);
         this.setResizable(false);
@@ -288,14 +288,14 @@ public class Sotano3 extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Sotano3 dialog = new Sotano3(new javax.swing.JFrame(), true);
+               /* Sotano3 dialog = new Sotano3(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
+                    @Override*/
+                 //   public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                //    }
+               // });
+               // dialog.setVisible(true);
             }
         });
     }

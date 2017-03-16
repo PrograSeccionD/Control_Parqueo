@@ -97,6 +97,11 @@ public class Principal extends javax.swing.JFrame {
         jButtonBlue.setFocusPainted(false);
         jButtonBlue.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/parking-sign (9).png"))); // NOI18N
         jButtonBlue.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/parking-sign (9).png"))); // NOI18N
+        jButtonBlue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBlueActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonBlue, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 130, 130));
 
         jButtonRed.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/parking-sign (4).png"))); // NOI18N
@@ -105,6 +110,11 @@ public class Principal extends javax.swing.JFrame {
         jButtonRed.setFocusPainted(false);
         jButtonRed.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/parking-sign (10).png"))); // NOI18N
         jButtonRed.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/parking-sign (10).png"))); // NOI18N
+        jButtonRed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRedActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 150, 150));
 
         jLabelTitle.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 48)); // NOI18N
@@ -145,6 +155,20 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButtonExitActionPerformed
+
+    private void jButtonBlueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBlueActionPerformed
+        // TODO add your handling code here:
+        Sotano1 ventana1 = new Sotano1();
+        ventana1.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonBlueActionPerformed
+
+    private void jButtonRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRedActionPerformed
+        // TODO add your handling code here:
+        Sotano2 ventana2 = new Sotano2();
+        ventana2.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonRedActionPerformed
     
     /**
      * @param args the command line arguments

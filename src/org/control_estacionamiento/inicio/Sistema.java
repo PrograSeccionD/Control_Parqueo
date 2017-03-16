@@ -9,12 +9,9 @@ import org.control_estacionamiento.bean.Parqueo;
 import org.control_estacionamiento.bean.Ubicacion;
 import org.control_estacionamiento.controlador.ControladorParqueo;
 import org.control_estacionamiento.controlador.ControladorUbicacion;
-<<<<<<< HEAD
-import org.control_estacionamiento.frame.Inicio;
-//import java.awt.event.ActionListener;
-=======
+
 import org.control_estacionamiento.frame.VentanaPrincipal;
->>>>>>> c9435a43457029d831ad3952987124a8c350d376
+
 
 /**
  *
@@ -38,18 +35,15 @@ public class Sistema {
                 controlador_parqueo.agregarParqueo(parqueo);
             }
         }
-<<<<<<< HEAD
+
         
-        inicio.iniciar();
-        inicio.setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
-        inicio.setVisible(true);
-=======
+       
         VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
         ventanaPrincipal.setResizable(false);
         ventanaPrincipal.setSize(400, 325);
         ventanaPrincipal.setLocationRelativeTo(null);
         ventanaPrincipal.agregarComponente();
         ventanaPrincipal.setVisible(true);
->>>>>>> c9435a43457029d831ad3952987124a8c350d376
+
     }
 }
