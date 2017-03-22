@@ -40,7 +40,7 @@ public class Sistema {
        
         VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
         ventanaPrincipal.setResizable(false);
-        ventanaPrincipal.setSize(400, 325);
+        //ventanaPrincipal.setSize(400, 325);
         ventanaPrincipal.setLocationRelativeTo(null);
         ventanaPrincipal.agregarComponente();
         ventanaPrincipal.setVisible(true);

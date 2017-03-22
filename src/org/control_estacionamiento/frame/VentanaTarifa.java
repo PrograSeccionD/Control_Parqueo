@@ -26,10 +26,7 @@ public class VentanaTarifa extends javax.swing.JDialog {
     public VentanaTarifa(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.setResizable(false);
         this.setLocationRelativeTo(null);
-        this.setSize(425, 335);  
-        this.setVisible(true);
     }
 
     /**
@@ -45,59 +42,97 @@ public class VentanaTarifa extends javax.swing.JDialog {
         txt_tarifa = new javax.swing.JTextField();
         btn_guardar = new javax.swing.JButton();
         btn_cancelar = new javax.swing.JButton();
+        jLabelTitle = new javax.swing.JLabel();
+        jLabelGuardar = new javax.swing.JLabel();
+        jLabelCancelar = new javax.swing.JLabel();
+        jButtonRegresar = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+        setSize(new java.awt.Dimension(540, 471));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lbl_placa.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lbl_placa.setForeground(new java.awt.Color(255, 255, 255));
         lbl_placa.setText("PLACA");
+        getContentPane().add(lbl_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 70, 74));
 
+        txt_tarifa.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txt_tarifa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_tarifa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_tarifaActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_tarifa, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 200, 74));
 
-        btn_guardar.setText("Guardar");
+        btn_guardar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btn_guardar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/save.png"))); // NOI18N
+        btn_guardar.setBorderPainted(false);
+        btn_guardar.setContentAreaFilled(false);
+        btn_guardar.setFocusPainted(false);
+        btn_guardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/save-preseed.png"))); // NOI18N
+        btn_guardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/save-preseed.png"))); // NOI18N
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_guardarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 70, -1));
 
-        btn_cancelar.setText("Cancelar");
+        btn_cancelar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btn_cancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/cancel.png"))); // NOI18N
+        btn_cancelar.setBorderPainted(false);
+        btn_cancelar.setContentAreaFilled(false);
+        btn_cancelar.setFocusPainted(false);
+        btn_cancelar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/cancel-pressed.png"))); // NOI18N
+        btn_cancelar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/cancel-pressed.png"))); // NOI18N
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 70, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_placa, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_guardar))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_cancelar)
-                    .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(93, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_placa, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(96, 96, 96)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_cancelar)
-                    .addComponent(btn_guardar))
-                .addContainerGap(136, Short.MAX_VALUE))
-        );
+        jLabelTitle.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
+        jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTitle.setText("TARIFA");
+        getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
+
+        jLabelGuardar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabelGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelGuardar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelGuardar.setText("Guardar");
+        getContentPane().add(jLabelGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 370, 70, -1));
+
+        jLabelCancelar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabelCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelCancelar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelCancelar.setText("Cancelar");
+        getContentPane().add(jLabelCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, 70, -1));
+
+        jButtonRegresar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jButtonRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/go-back-arrow (2).png"))); // NOI18N
+        jButtonRegresar.setText("Regresar");
+        jButtonRegresar.setBorderPainted(false);
+        jButtonRegresar.setContentAreaFilled(false);
+        jButtonRegresar.setFocusPainted(false);
+        jButtonRegresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/go-back-arrow.png"))); // NOI18N
+        jButtonRegresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/go-back-arrow.png"))); // NOI18N
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/qPexDF.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -113,12 +148,25 @@ public class VentanaTarifa extends javax.swing.JDialog {
             tarifa = Integer.parseInt(txt_tarifa.getText());
        } 
        t.setTarifa(tarifa);
-       this.dispose();
+       
+       /*
+       VentanaPrincipal regresar = new VentanaPrincipal();
+       regresar.setVisible(true);
+       this.setVisible(false);*/
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
-        this.dispose();
+        VentanaPrincipal cancelar = new VentanaPrincipal();
+        cancelar.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+        // TODO add your handling code here:
+        VentanaPrincipal regresar = new VentanaPrincipal();
+        regresar.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,14 +198,14 @@ public class VentanaTarifa extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                VentanaTarifa dialog = new VentanaTarifa(new javax.swing.JFrame(), true);
+               /* VentanaTarifa dialog = new VentanaTarifa(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
+                    public void windowClosing(java.awt.event.WindowEvent e) {*/
                         System.exit(0);
-                    }
+                 /*   }
                 });
-                dialog.setVisible(true);
+                dialog.setVisible(true);*/
             }
         });
     }
@@ -165,6 +213,11 @@ public class VentanaTarifa extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cancelar;
     private javax.swing.JButton btn_guardar;
+    private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JLabel jLabelCancelar;
+    private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelGuardar;
+    private javax.swing.JLabel jLabelTitle;
     private javax.swing.JLabel lbl_placa;
     private javax.swing.JTextField txt_tarifa;
     // End of variables declaration//GEN-END:variables

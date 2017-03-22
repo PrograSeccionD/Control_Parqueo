@@ -25,7 +25,6 @@ public class VentanaReporte extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         agregarComponente();
-        this.setVisible(true);
     }
 
     /**
@@ -39,9 +38,20 @@ public class VentanaReporte extends javax.swing.JDialog {
 
         pnl_menu = new javax.swing.JScrollPane();
         tbl_ticket = new javax.swing.JTable();
+        jButtonRegresar = new javax.swing.JButton();
+        jLabelReporte = new javax.swing.JLabel();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(540, 471));
+        setResizable(false);
+        setSize(new java.awt.Dimension(540, 471));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tbl_ticket.setBackground(new java.awt.Color(204, 255, 204));
+        tbl_ticket.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 204, 51)));
+        tbl_ticket.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         tbl_ticket.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -50,27 +60,54 @@ public class VentanaReporte extends javax.swing.JDialog {
                 "ID", "PLACA", "HORA INGRESO", "HORA SALIDA", "UBICACION", "TARIFA", "TOTAL"
             }
         ));
+        tbl_ticket.setGridColor(new java.awt.Color(0, 153, 153));
+        tbl_ticket.setSelectionBackground(new java.awt.Color(255, 255, 255));
         pnl_menu.setViewportView(tbl_ticket);
+        if (tbl_ticket.getColumnModel().getColumnCount() > 0) {
+            tbl_ticket.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tbl_ticket.getColumnModel().getColumn(1).setPreferredWidth(60);
+            tbl_ticket.getColumnModel().getColumn(2).setPreferredWidth(130);
+            tbl_ticket.getColumnModel().getColumn(3).setPreferredWidth(130);
+            tbl_ticket.getColumnModel().getColumn(4).setPreferredWidth(100);
+            tbl_ticket.getColumnModel().getColumn(5).setPreferredWidth(60);
+            tbl_ticket.getColumnModel().getColumn(6).setPreferredWidth(70);
+        }
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(pnl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        getContentPane().add(pnl_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 480, 275));
+
+        jButtonRegresar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jButtonRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/go-back-arrow (2).png"))); // NOI18N
+        jButtonRegresar.setText("Regresar");
+        jButtonRegresar.setBorderPainted(false);
+        jButtonRegresar.setContentAreaFilled(false);
+        jButtonRegresar.setFocusPainted(false);
+        jButtonRegresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/go-back-arrow.png"))); // NOI18N
+        jButtonRegresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/go-back-arrow.png"))); // NOI18N
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabelReporte.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
+        jLabelReporte.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelReporte.setText("REPORTE");
+        getContentPane().add(jLabelReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/qPexDF.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+        // TODO add your handling code here:
+        VentanaPrincipal regresar = new VentanaPrincipal();
+        regresar.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,22 +139,20 @@ public class VentanaReporte extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                VentanaReporte dialog = new VentanaReporte(new javax.swing.JFrame(), true);
+            /*    VentanaReporte dialog = new VentanaReporte(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
+                    public void windowClosing(java.awt.event.WindowEvent e) {*/
                         System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+             //      }
+             //   });
+             //  dialog.setVisible(true);
             }
         });
     }
     
     public void agregarComponente() {
-        this.setResizable(false);
         this.setLocationRelativeTo(null);
-        this.setSize(425, 335);
         
         DefaultTableModel model = (DefaultTableModel) tbl_ticket.getModel();
         for (Ticket t : ctl_ticket.getListadoTicket()) {
@@ -127,6 +162,9 @@ public class VentanaReporte extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelReporte;
     private javax.swing.JScrollPane pnl_menu;
     private javax.swing.JTable tbl_ticket;
     // End of variables declaration//GEN-END:variables

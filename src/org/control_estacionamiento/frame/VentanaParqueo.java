@@ -86,22 +86,20 @@ public class VentanaParqueo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sotano1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sotano1ActionPerformed
-      //  Sotano1 ventanaIndividual = new Sotano1(this, true);
-      Sotano1 ventanaIndividual = new Sotano1();
+      Sotano1 ventanaIndividual = new Sotano1(this, true);
       ventanaIndividual.setVisible(true);
       this.setVisible(false);
     }//GEN-LAST:event_sotano1ActionPerformed
 
     private void sotano3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sotano3ActionPerformed
-      //  Sotano2 ventanaIndividual = new Sotano2(this, true);
-      Sotano2 ventanaIndividual = new Sotano2();
+      Sotano2 ventanaIndividual = new Sotano2(this, true);
       ventanaIndividual.setVisible(true);
       this.setVisible(false);
     }//GEN-LAST:event_sotano3ActionPerformed
 
     private void sotano2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sotano2ActionPerformed
-       // Sotano3 ventanaIndividual = new Sotano3(this, true);
-       Sotano3 ventanaIndividual = new Sotano3();
+       Sotano3 ventanaIndividual = new Sotano3(this, true);
+       ventanaIndividual.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_sotano2ActionPerformed
 

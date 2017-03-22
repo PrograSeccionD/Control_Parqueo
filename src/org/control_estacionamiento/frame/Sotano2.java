@@ -19,8 +19,8 @@ public class Sotano2 extends javax.swing.JDialog {
     /**
      * Creates new form Sotano2
      */
-    public Sotano2(/*java.awt.Frame parent, boolean modal*/) {
-       // super(parent, modal);
+    public Sotano2(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("img/parking(1).png")).getImage());
@@ -66,6 +66,10 @@ public class Sotano2 extends javax.swing.JDialog {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabelHorizontal = new javax.swing.JLabel();
+        jLabelHorizontal1 = new javax.swing.JLabel();
         jLabelTitle = new javax.swing.JLabel();
         jButtonRegresar = new javax.swing.JButton();
         jLabelContainer = new javax.swing.JLabel();
@@ -75,6 +79,7 @@ public class Sotano2 extends javax.swing.JDialog {
         setMaximumSize(new java.awt.Dimension(540, 471));
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(540, 471));
+        setResizable(false);
         setSize(new java.awt.Dimension(540, 471));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -84,7 +89,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 GActionPerformed(evt);
             }
         });
-        getContentPane().add(G, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, -1, -1));
+        getContentPane().add(G, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, -1, -1));
 
         H.setContentAreaFilled(false);
         H.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +97,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 HActionPerformed(evt);
             }
         });
-        getContentPane().add(H, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, -1, -1));
+        getContentPane().add(H, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, -1, -1));
 
         I.setContentAreaFilled(false);
         I.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +105,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 IActionPerformed(evt);
             }
         });
-        getContentPane().add(I, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
+        getContentPane().add(I, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, -1));
 
         J.setContentAreaFilled(false);
         J.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +113,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 JActionPerformed(evt);
             }
         });
-        getContentPane().add(J, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+        getContentPane().add(J, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, -1, -1));
 
         K.setContentAreaFilled(false);
         K.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +121,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 KActionPerformed(evt);
             }
         });
-        getContentPane().add(K, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
+        getContentPane().add(K, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
 
         A.setContentAreaFilled(false);
         A.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +129,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 AActionPerformed(evt);
             }
         });
-        getContentPane().add(A, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
+        getContentPane().add(A, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
 
         L.setContentAreaFilled(false);
         L.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +137,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 LActionPerformed(evt);
             }
         });
-        getContentPane().add(L, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
+        getContentPane().add(L, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
         B.setContentAreaFilled(false);
         B.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +145,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 BActionPerformed(evt);
             }
         });
-        getContentPane().add(B, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
+        getContentPane().add(B, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
 
         M.setContentAreaFilled(false);
         M.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +153,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 MActionPerformed(evt);
             }
         });
-        getContentPane().add(M, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
+        getContentPane().add(M, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
 
         C.setContentAreaFilled(false);
         C.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +161,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 CActionPerformed(evt);
             }
         });
-        getContentPane().add(C, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
+        getContentPane().add(C, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
 
         F1.setContentAreaFilled(false);
         F1.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +169,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 F1ActionPerformed(evt);
             }
         });
-        getContentPane().add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, -1, -1));
+        getContentPane().add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
 
         D.setContentAreaFilled(false);
         D.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +177,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 DActionPerformed(evt);
             }
         });
-        getContentPane().add(D, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
+        getContentPane().add(D, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
 
         E.setContentAreaFilled(false);
         E.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +185,7 @@ public class Sotano2 extends javax.swing.JDialog {
                 EActionPerformed(evt);
             }
         });
-        getContentPane().add(E, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
+        getContentPane().add(E, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
 
         F.setContentAreaFilled(false);
         F.addActionListener(new java.awt.event.ActionListener() {
@@ -188,76 +193,90 @@ public class Sotano2 extends javax.swing.JDialog {
                 FActionPerformed(evt);
             }
         });
-        getContentPane().add(F, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, -1, -1));
+        getContentPane().add(F, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setText("\\");
-            getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 30, 60));
+            getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 30, 60));
 
             jLabel2.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
             jLabel2.setText("\\");
-                getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
+                getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
 
                 jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                 jLabel3.setText("\\");
-                    getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
+                    getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
 
                     jLabel4.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                     jLabel4.setText("\\");
-                        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
+                        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
 
                         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                         jLabel5.setText("\\");
-                            getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, -1, -1));
+                            getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, -1, -1));
 
                             jLabel6.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                             jLabel6.setText("\\");
-                                getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, -1, -1));
+                                getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, -1, -1));
 
                                 jLabel7.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                                 jLabel7.setText("\\");
-                                    getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, -1, -1));
+                                    getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, -1, -1));
 
                                     jLabel8.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                                     jLabel8.setText("\\");
-                                        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, -1, -1));
+                                        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
 
                                         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                                         jLabel9.setText("/");
-                                        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+                                        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
                                         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                                         jLabel10.setText("/");
-                                        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+                                        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
                                         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                                         jLabel11.setText("/");
-                                        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
+                                        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
 
                                         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                                         jLabel12.setText("/");
-                                        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
+                                        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
 
                                         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                                         jLabel13.setText("/");
-                                        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, -1));
+                                        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, -1, -1));
 
                                         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                                         jLabel14.setText("/");
-                                        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, -1));
+                                        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, -1, -1));
 
                                         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                                         jLabel15.setText("/");
-                                        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, -1));
+                                        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, -1, -1));
 
                                         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
                                         jLabel16.setText("/");
-                                        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, -1, -1));
+                                        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, -1, -1));
+
+                                        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/arrow-right-down.png"))); // NOI18N
+                                        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, -1));
+
+                                        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/icon64p.png"))); // NOI18N
+                                        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
+
+                                        jLabelHorizontal.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+                                        jLabelHorizontal.setText("___________");
+                                        getContentPane().add(jLabelHorizontal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
+
+                                        jLabelHorizontal1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+                                        jLabelHorizontal1.setText("___________");
+                                        getContentPane().add(jLabelHorizontal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
 
                                         jLabelTitle.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
                                         jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
                                         jLabelTitle.setText("Sotano 2");
-                                        getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
+                                        getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
                                         jButtonRegresar.setBackground(new java.awt.Color(255, 255, 255));
                                         jButtonRegresar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -274,11 +293,11 @@ public class Sotano2 extends javax.swing.JDialog {
                                                 jButtonRegresarActionPerformed(evt);
                                             }
                                         });
-                                        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
+                                        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
                                         jLabelContainer.setBackground(new java.awt.Color(255, 255, 255));
                                         jLabelContainer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/plainwhite.png"))); // NOI18N
-                                        getContentPane().add(jLabelContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 340, 220));
+                                        getContentPane().add(jLabelContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 340, 220));
 
                                         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/black-holes.jpg"))); // NOI18N
                                         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 470));
@@ -437,6 +456,8 @@ public class Sotano2 extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -447,6 +468,8 @@ public class Sotano2 extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelContainer;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelHorizontal;
+    private javax.swing.JLabel jLabelHorizontal1;
     private javax.swing.JLabel jLabelTitle;
     // End of variables declaration//GEN-END:variables
 }

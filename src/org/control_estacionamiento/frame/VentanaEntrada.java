@@ -36,7 +36,6 @@ public class VentanaEntrada extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         agregarComponente();
-        this.setVisible(true);
     }
 
     /**
@@ -58,89 +57,119 @@ public class VentanaEntrada extends javax.swing.JDialog {
         txt_tarifa = new javax.swing.JFormattedTextField();
         btn_guardar = new javax.swing.JButton();
         btn_cancelar = new javax.swing.JButton();
+        jButtonRegresar = new javax.swing.JButton();
+        jLabelSave = new javax.swing.JLabel();
+        jLabelCancel = new javax.swing.JLabel();
+        jLabelTitle = new javax.swing.JLabel();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(540, 471));
+        setResizable(false);
+        setSize(new java.awt.Dimension(540, 471));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lbl_placa.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lbl_placa.setForeground(new java.awt.Color(255, 255, 255));
         lbl_placa.setText("PLACA");
+        getContentPane().add(lbl_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 129, -1));
 
+        lbl_entrada.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lbl_entrada.setForeground(new java.awt.Color(255, 255, 255));
         lbl_entrada.setText("FECHA Y HORA");
+        getContentPane().add(lbl_entrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 129, -1));
 
+        lbl_tarifa.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lbl_tarifa.setForeground(new java.awt.Color(255, 255, 255));
         lbl_tarifa.setText("TARIFA");
+        getContentPane().add(lbl_tarifa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 129, -1));
 
+        lbl_parqueo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lbl_parqueo.setForeground(new java.awt.Color(255, 255, 255));
         lbl_parqueo.setText("PARQUEO ASIGNADO");
+        getContentPane().add(lbl_parqueo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 150, -1));
 
+        txt_placa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 120, -1));
+
+        txt_parqueo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(txt_parqueo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 120, -1));
+
+        txt_entrada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_entrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_entradaActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_entrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 120, -1));
 
-        btn_guardar.setText("Guardar");
+        txt_tarifa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(txt_tarifa, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 120, -1));
+
+        btn_guardar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btn_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/save.png"))); // NOI18N
+        btn_guardar.setBorderPainted(false);
+        btn_guardar.setContentAreaFilled(false);
+        btn_guardar.setFocusPainted(false);
+        btn_guardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/save-preseed.png"))); // NOI18N
+        btn_guardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/save-preseed.png"))); // NOI18N
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_guardarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 70, -1));
 
-        btn_cancelar.setText("Cancelar");
+        btn_cancelar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/cancel.png"))); // NOI18N
+        btn_cancelar.setBorderPainted(false);
+        btn_cancelar.setContentAreaFilled(false);
+        btn_cancelar.setFocusPainted(false);
+        btn_cancelar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/cancel-pressed.png"))); // NOI18N
+        btn_cancelar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/cancel-pressed.png"))); // NOI18N
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 70, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_parqueo, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_parqueo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lbl_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_placa, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_placa, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .addComponent(txt_entrada))))
-                .addGap(128, 128, 128))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(btn_guardar)
-                .addGap(18, 18, 18)
-                .addComponent(btn_cancelar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_placa)
-                    .addComponent(txt_placa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_entrada)
-                    .addComponent(txt_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_tarifa)
-                    .addComponent(txt_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_parqueo)
-                    .addComponent(txt_parqueo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_guardar)
-                    .addComponent(btn_cancelar))
-                .addContainerGap(82, Short.MAX_VALUE))
-        );
+        jButtonRegresar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jButtonRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/go-back-arrow (2).png"))); // NOI18N
+        jButtonRegresar.setText("Regresar");
+        jButtonRegresar.setBorderPainted(false);
+        jButtonRegresar.setContentAreaFilled(false);
+        jButtonRegresar.setFocusPainted(false);
+        jButtonRegresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/go-back-arrow.png"))); // NOI18N
+        jButtonRegresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/go-back-arrow.png"))); // NOI18N
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+
+        jLabelSave.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabelSave.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelSave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSave.setText("Guardar");
+        getContentPane().add(jLabelSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 70, -1));
+
+        jLabelCancel.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabelCancel.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelCancel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelCancel.setText("Cancelar");
+        getContentPane().add(jLabelCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 70, -1));
+
+        jLabelTitle.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
+        jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTitle.setText("NUEVA ENTRADA");
+        getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/qPexDF.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -150,8 +179,36 @@ public class VentanaEntrada extends javax.swing.JDialog {
     }//GEN-LAST:event_txt_entradaActionPerformed
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
-        // TODO add your handling code here:
+        if (parqueo_disponible != null) {
+            ControladorTicket ctl_ticket = new ControladorTicket().getInstance();
+            Ticket ticket = new Ticket();
+            ticket.setId(ctl_ticket.getListadoTicket().size() + 1);
+            ticket.setHoraEntrada(currentTime);
+            ticket.setPlaca(txt_placa.getText());
+            ticket.setParqueo(parqueo_disponible);
+            ticket.setTarifa(Tarifa.getTarifa());
+            parqueo_disponible.setDisponible(false);
+            ctl_ticket.agregarTicket(ticket);
+        }
+        this.dispose();
+        VentanaPrincipal regreso = new VentanaPrincipal();
+        regreso.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btn_guardarActionPerformed
+
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+        // TODO add your handling code here:
+        VentanaPrincipal regreso = new VentanaPrincipal();
+        regreso.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
+
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        // TODO add your handling code here:
+        VentanaPrincipal cancelar = new VentanaPrincipal();
+        cancelar.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,22 +240,20 @@ public class VentanaEntrada extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                VentanaEntrada dialog = new VentanaEntrada(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
+             //   VentanaEntrada dialog = new VentanaEntrada(new javax.swing.JFrame(), true);
+             //   dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+             //       @Override
+             //       public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+             //       }
+             //   });
+             //   dialog.setVisible(true);
             }
         });
     }
     
     public void agregarComponente() {
-        this.setResizable(false);
-        this.setLocationRelativeTo(null);
-        this.setSize(425, 335);
+        this.setLocationRelativeTo(null);  
         
         // HORA ENTRADA
         Calendar currentCalendar = Calendar.getInstance();
@@ -240,23 +295,17 @@ public class VentanaEntrada extends javax.swing.JDialog {
     }
     
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {
-        if (parqueo_disponible != null) {
-            ControladorTicket ctl_ticket = new ControladorTicket().getInstance();
-            Ticket ticket = new Ticket();
-            ticket.setId(ctl_ticket.getListadoTicket().size() + 1);
-            ticket.setHoraEntrada(currentTime);
-            ticket.setPlaca(txt_placa.getText());
-            ticket.setParqueo(parqueo_disponible);
-            ticket.setTarifa(Tarifa.getTarifa());
-            parqueo_disponible.setDisponible(false);
-            ctl_ticket.agregarTicket(ticket);
-        }
-        this.dispose();
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cancelar;
     private javax.swing.JButton btn_guardar;
+    private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JLabel jLabelCancel;
+    private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelSave;
+    private javax.swing.JLabel jLabelTitle;
     private javax.swing.JLabel lbl_entrada;
     private javax.swing.JLabel lbl_parqueo;
     private javax.swing.JLabel lbl_placa;
