@@ -7,13 +7,16 @@ package org.control_estacionamiento.frame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.EOFException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 import org.control_estacionamiento.bean.Parqueo;
 import org.control_estacionamiento.bean.Tarifa;
 import org.control_estacionamiento.bean.Ticket;
@@ -25,10 +28,13 @@ import org.control_estacionamiento.controlador.ControladorTicket;
  * @author dafuentes
  */
 public class VentanaEntrada extends javax.swing.JDialog {
-    
+
     protected SimpleDateFormat timeFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
     private Parqueo parqueo_disponible;
     private Date currentTime;
+    DateFormat datehora = new SimpleDateFormat("HH");
+    DateFormat dateFormat = new SimpleDateFormat("aa");
+    Date date = new Date();
     /**
      * Creates new form VentanaEntrada
      */
@@ -65,7 +71,6 @@ public class VentanaEntrada extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(540, 471));
         setResizable(false);
         setSize(new java.awt.Dimension(540, 471));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -179,21 +184,35 @@ public class VentanaEntrada extends javax.swing.JDialog {
     }//GEN-LAST:event_txt_entradaActionPerformed
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
-        if (parqueo_disponible != null) {
-            ControladorTicket ctl_ticket = new ControladorTicket().getInstance();
-            Ticket ticket = new Ticket();
-            ticket.setId(ctl_ticket.getListadoTicket().size() + 1);
-            ticket.setHoraEntrada(currentTime);
-            ticket.setPlaca(txt_placa.getText());
-            ticket.setParqueo(parqueo_disponible);
-            ticket.setTarifa(Tarifa.getTarifa());
-            parqueo_disponible.setDisponible(false);
-            ctl_ticket.agregarTicket(ticket);
+        try {
+            BufferedWriter rep = new BufferedWriter(new FileWriter("reporte.txt", true));
+
+            if (parqueo_disponible != null) {
+                ControladorTicket ctl_ticket = new ControladorTicket().getInstance();
+                Ticket ticket = new Ticket();
+                ticket.setId(ctl_ticket.getListadoTicket().size() + 1);
+                ticket.setHoraEntrada(currentTime);
+                ticket.setPlaca(txt_placa.getText());
+                ticket.setParqueo(parqueo_disponible);
+                ticket.setTarifa(Tarifa.getTarifa());
+                parqueo_disponible.setDisponible(false);
+                ctl_ticket.agregarTicket(ticket);
+
+                rep.write(datehora.format(date) + ",");
+                rep.write(dateFormat.format(date) + ",");
+                rep.write(txt_placa.getText());
+                rep.newLine();
+                rep.close();
+                
+            }
+            this.dispose();
+            VentanaPrincipal regreso = new VentanaPrincipal();
+            regreso.setVisible(true);
+            this.setVisible(false);
+        } catch (IOException e) {
+            System.out.println("ERROR");
         }
-        this.dispose();
-        VentanaPrincipal regreso = new VentanaPrincipal();
-        regreso.setVisible(true);
-        this.setVisible(false);
+
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
@@ -240,41 +259,41 @@ public class VentanaEntrada extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-             //   VentanaEntrada dialog = new VentanaEntrada(new javax.swing.JFrame(), true);
-             //   dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-             //       @Override
-             //       public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-             //       }
-             //   });
-             //   dialog.setVisible(true);
+                //   VentanaEntrada dialog = new VentanaEntrada(new javax.swing.JFrame(), true);
+                //   dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                //       @Override
+                //       public void windowClosing(java.awt.event.WindowEvent e) {
+                System.exit(0);
+                //       }
+                //   });
+                //   dialog.setVisible(true);
             }
         });
     }
-    
+
     public void agregarComponente() {
-        this.setLocationRelativeTo(null);  
-        
+        this.setLocationRelativeTo(null);
+
         // HORA ENTRADA
         Calendar currentCalendar = Calendar.getInstance();
         currentTime = currentCalendar.getTime();
         txt_entrada.setValue(timeFormat.format(currentTime));
         txt_entrada.setEditable(false);
-        
+
         // TARIFA
         txt_tarifa.setValue(Tarifa.getTarifa());
         txt_tarifa.setEditable(false);
-        
+
         // PARQUEO
         ControladorParqueo ctl_parqueo = new ControladorParqueo().getInstance();
         parqueo_disponible = ctl_parqueo.getParqueoDisponible();
 
         btn_guardar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-               btnGuardarActionPerformed(e);
+                btnGuardarActionPerformed(e);
             }
-        }); 
-        
+        });
+
         if (parqueo_disponible != null) {
             txt_parqueo.setValue(parqueo_disponible.getDescripcion() + " - " + parqueo_disponible.getUbicacion().getDescripcion());
         } else {
@@ -282,20 +301,20 @@ public class VentanaEntrada extends javax.swing.JDialog {
             txt_parqueo.setValue("No hay parqueos");
         }
         txt_parqueo.setEditable(false);
-        
+
         btn_cancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-               btnCancelarActionPerformed(e);
+                btnCancelarActionPerformed(e);
             }
-        });   
+        });
     }
-    
+
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {
         this.dispose();
     }
-    
+
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

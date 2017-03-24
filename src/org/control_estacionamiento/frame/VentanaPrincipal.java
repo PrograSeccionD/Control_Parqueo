@@ -54,7 +54,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(540, 471));
         setResizable(false);
         setSize(new java.awt.Dimension(540, 471));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -182,7 +181,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btn_reporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteActionPerformed
         // TODO add your handling code here:
-        VentanaReporte reporte = new VentanaReporte(this, true);
+        VentanaReporte reporte = new VentanaReporte();
         reporte.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_reporteActionPerformed

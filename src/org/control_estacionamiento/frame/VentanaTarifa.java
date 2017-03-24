@@ -149,10 +149,10 @@ public class VentanaTarifa extends javax.swing.JDialog {
        } 
        t.setTarifa(tarifa);
        
-       /*
+       
        VentanaPrincipal regresar = new VentanaPrincipal();
        regresar.setVisible(true);
-       this.setVisible(false);*/
+       this.setVisible(false);
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed

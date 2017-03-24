@@ -5,24 +5,23 @@
  */
 package org.control_estacionamiento.frame;
 
-import java.text.SimpleDateFormat;
+import java.io.BufferedReader;
+import java.io.EOFException;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.table.DefaultTableModel;
-import org.control_estacionamiento.bean.Ticket;
-import org.control_estacionamiento.controlador.ControladorTicket;
-
 /**
  *
  * @author dafuentes
  */
-public class VentanaReporte extends javax.swing.JFrame {
-    
-    protected SimpleDateFormat timeFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
-    private ControladorTicket ctl_ticket = new ControladorTicket().getInstance();
+public class VentanaReporteHora extends javax.swing.JDialog {
     /**
      * Creates new form VentanaReporte
      */
-    public VentanaReporte() {
+    public VentanaReporteHora(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
         agregarComponente();
     }
 
@@ -36,11 +35,10 @@ public class VentanaReporte extends javax.swing.JFrame {
     private void initComponents() {
 
         pnl_menu = new javax.swing.JScrollPane();
-        tbl_ticket = new javax.swing.JTable();
+        tbl_horas = new javax.swing.JTable();
         jButtonRegresar = new javax.swing.JButton();
         jLabelReporte = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -48,28 +46,24 @@ public class VentanaReporte extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(540, 471));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tbl_ticket.setBackground(new java.awt.Color(204, 255, 204));
-        tbl_ticket.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 204, 51)));
-        tbl_ticket.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        tbl_ticket.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_horas.setBackground(new java.awt.Color(204, 255, 204));
+        tbl_horas.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 204, 51)));
+        tbl_horas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        tbl_horas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "PLACA", "HORA INGRESO", "HORA SALIDA", "UBICACION", "TARIFA", "TOTAL"
+                "ID", "HORA", "CANTIDAD DE AUTOS"
             }
         ));
-        tbl_ticket.setGridColor(new java.awt.Color(0, 153, 153));
-        tbl_ticket.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        pnl_menu.setViewportView(tbl_ticket);
-        if (tbl_ticket.getColumnModel().getColumnCount() > 0) {
-            tbl_ticket.getColumnModel().getColumn(0).setPreferredWidth(50);
-            tbl_ticket.getColumnModel().getColumn(1).setPreferredWidth(60);
-            tbl_ticket.getColumnModel().getColumn(2).setPreferredWidth(130);
-            tbl_ticket.getColumnModel().getColumn(3).setPreferredWidth(130);
-            tbl_ticket.getColumnModel().getColumn(4).setPreferredWidth(100);
-            tbl_ticket.getColumnModel().getColumn(5).setPreferredWidth(60);
-            tbl_ticket.getColumnModel().getColumn(6).setPreferredWidth(70);
+        tbl_horas.setGridColor(new java.awt.Color(0, 153, 153));
+        tbl_horas.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        pnl_menu.setViewportView(tbl_horas);
+        if (tbl_horas.getColumnModel().getColumnCount() > 0) {
+            tbl_horas.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tbl_horas.getColumnModel().getColumn(1).setPreferredWidth(60);
+            tbl_horas.getColumnModel().getColumn(2).setPreferredWidth(130);
         }
 
         getContentPane().add(pnl_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 480, 275));
@@ -96,15 +90,7 @@ public class VentanaReporte extends javax.swing.JFrame {
         getContentPane().add(jLabelReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/qPexDF.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 540, 480));
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, -1, -1));
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -116,12 +102,6 @@ public class VentanaReporte extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        VentanaReporteHora horas = new VentanaReporteHora(this, true);
-        horas.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
-    
     /**
      * @param args the command line arguments
      */
@@ -167,19 +147,53 @@ public class VentanaReporte extends javax.swing.JFrame {
     public void agregarComponente() {
         this.setLocationRelativeTo(null);
         
-        DefaultTableModel model = (DefaultTableModel) tbl_ticket.getModel();
-        for (Ticket t : ctl_ticket.getListadoTicket()) {
-            Object rowData[] = {t.getId(), t.getPlaca(), timeFormat.format(t.getHoraEntrada().getTime()), timeFormat.format(t.getHoraSalida().getTime()),t.getParqueo().getUbicacion().getDescripcion(), t.getTarifa(), t.getTotal()};
-            model.addRow(rowData);
+        try {
+            String linea;
+            String horas[] = {"01","02","03","04","05","06","07","08","09","10","11","12",
+                                "13","14","15","16","17","18","19","20","21","22","23","24"};
+            String [] campos;
+            String hora = "";
+            String form = "";
+            int count = 0;
+            int id = 1;
+            BufferedReader entrada = new BufferedReader(new FileReader("reporte.txt"));
+            try {
+
+                for (int x = 0; x < horas.length - 1; x++) {
+                    hora = horas[x];
+                    while ((linea = entrada.readLine()) != null) {
+                        campos = linea.split(",");
+                        
+                        if (campos[0].equals(hora)) {
+                            form = campos[1];
+                            count++;
+                        }
+                    }
+                    
+                    if (count != 0){
+                        DefaultTableModel model = (DefaultTableModel) tbl_horas.getModel();
+                        Object rowData[] = {id++ ,horas[x] + " " + form, count};
+                        model.addRow(rowData);
+                    }
+                    entrada = new BufferedReader(new FileReader("reporte.txt"));
+                    count = 0;
+                    form = "";
+                }
+
+            } catch (EOFException e) {
+            }
+            entrada.close();
+        } catch (IOException e) {
+            System.out.println("ERROR");
         }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelReporte;
     private javax.swing.JScrollPane pnl_menu;
-    private javax.swing.JTable tbl_ticket;
+    private javax.swing.JTable tbl_horas;
     // End of variables declaration//GEN-END:variables
 }
