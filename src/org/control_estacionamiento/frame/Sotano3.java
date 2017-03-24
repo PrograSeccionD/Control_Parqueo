@@ -274,7 +274,7 @@ public class Sotano3 extends javax.swing.JDialog {
 
         jLabelTitle.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
         jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitle.setText("Sotano 3");
+        jLabelTitle.setText("Sótano 3");
         getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
         jButtonRegresar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N

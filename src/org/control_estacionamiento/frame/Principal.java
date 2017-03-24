@@ -39,9 +39,6 @@ public class Principal extends javax.swing.JFrame {
         jButtonGoBack = new javax.swing.JButton();
         jLabelTitle = new javax.swing.JLabel();
         jLabelDesc = new javax.swing.JLabel();
-        jLabelDisponible1 = new javax.swing.JLabel();
-        jLabelDisponible2 = new javax.swing.JLabel();
-        jLabelDisponible3 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,23 +46,23 @@ public class Principal extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelSotano1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabelSotano1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabelSotano1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelSotano1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelSotano1.setText("Sótano 1");
-        getContentPane().add(jLabelSotano1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 130, 30));
+        getContentPane().add(jLabelSotano1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 130, 30));
 
-        jLabelSotano2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabelSotano2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabelSotano2.setForeground(new java.awt.Color(255, 255, 255));
         jLabelSotano2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelSotano2.setText("Sótano 2");
-        getContentPane().add(jLabelSotano2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 130, -1));
+        getContentPane().add(jLabelSotano2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 130, 30));
 
-        jLabelSotano3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabelSotano3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabelSotano3.setForeground(new java.awt.Color(255, 255, 255));
         jLabelSotano3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelSotano3.setText("Sótano 3");
-        getContentPane().add(jLabelSotano3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 120, -1));
+        getContentPane().add(jLabelSotano3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 120, 30));
 
         jButtonGreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/parking-sign (8).png"))); // NOI18N
         jButtonGreen.setBorderPainted(false);
@@ -133,21 +130,6 @@ public class Principal extends javax.swing.JFrame {
         jLabelDesc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelDesc.setText("Elige en qué sótano deseas estacionar tu vehículo");
         getContentPane().add(jLabelDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 540, 30));
-
-        jLabelDisponible1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabelDisponible1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelDisponible1.setText("Disponibles:");
-        getContentPane().add(jLabelDisponible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 90, -1));
-
-        jLabelDisponible2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabelDisponible2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelDisponible2.setText("Disponibles:");
-        getContentPane().add(jLabelDisponible2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
-
-        jLabelDisponible3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabelDisponible3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelDisponible3.setText("Disponibles:");
-        getContentPane().add(jLabelDisponible3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, -1, -1));
 
         jLabelFondo.setBackground(new java.awt.Color(102, 255, 102));
         jLabelFondo.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -226,9 +208,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonGreen;
     private javax.swing.JButton jButtonRed;
     private javax.swing.JLabel jLabelDesc;
-    private javax.swing.JLabel jLabelDisponible1;
-    private javax.swing.JLabel jLabelDisponible2;
-    private javax.swing.JLabel jLabelDisponible3;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelSotano1;
     private javax.swing.JLabel jLabelSotano2;

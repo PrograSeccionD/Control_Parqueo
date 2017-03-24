@@ -6,6 +6,7 @@
 package org.control_estacionamiento.frame;
 
 import java.text.SimpleDateFormat;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import org.control_estacionamiento.bean.Ticket;
 import org.control_estacionamiento.controlador.ControladorTicket;
@@ -21,8 +22,10 @@ public class VentanaReporte extends javax.swing.JFrame {
     /**
      * Creates new form VentanaReporte
      */
-    public VentanaReporte() {
+    public VentanaReporte(java.awt.Frame parent, boolean modal) {
+        //super (parent, modal);
         initComponents();
+        this.setIconImage(new ImageIcon(getClass().getResource("img/parking(1).png")).getImage());
         agregarComponente();
     }
 
@@ -39,8 +42,8 @@ public class VentanaReporte extends javax.swing.JFrame {
         tbl_ticket = new javax.swing.JTable();
         jButtonRegresar = new javax.swing.JButton();
         jLabelReporte = new javax.swing.JLabel();
-        jLabelFondo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -48,8 +51,8 @@ public class VentanaReporte extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(540, 471));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tbl_ticket.setBackground(new java.awt.Color(204, 255, 204));
-        tbl_ticket.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 204, 51)));
+        tbl_ticket.setBackground(new java.awt.Color(153, 204, 255));
+        tbl_ticket.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 51, 255)));
         tbl_ticket.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         tbl_ticket.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,16 +98,25 @@ public class VentanaReporte extends javax.swing.JFrame {
         jLabelReporte.setText("REPORTE");
         getContentPane().add(jLabelReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/qPexDF.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 540, 480));
-
-        jButton1.setText("jButton1");
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/clock.png"))); // NOI18N
+        jButton1.setText("Reporte Horas");
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setFocusPainted(false);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/clock-pressed.png"))); // NOI18N
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/clock-pressed.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, -1, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/qPexDF.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 540, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

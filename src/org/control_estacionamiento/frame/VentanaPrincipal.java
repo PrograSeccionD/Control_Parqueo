@@ -142,7 +142,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabelSalida.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabelSalida.setForeground(new java.awt.Color(255, 255, 255));
         jLabelSalida.setText("Nueva Salida");
-        getContentPane().add(jLabelSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, -1, -1));
+        getContentPane().add(jLabelSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
 
         jLabelEntrada.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabelEntrada.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,7 +169,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabelTitle.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
         jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitle.setText("The Parking Lot");
+        jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTitle.setText("GDA PARKING");
         getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/1obsx5o.jpg"))); // NOI18N
@@ -181,7 +182,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btn_reporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteActionPerformed
         // TODO add your handling code here:
-        VentanaReporte reporte = new VentanaReporte();
+        VentanaReporte reporte = new VentanaReporte(this, true);
         reporte.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_reporteActionPerformed

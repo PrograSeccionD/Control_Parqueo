@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -21,6 +22,7 @@ public class VentanaReporteHora extends javax.swing.JDialog {
     public VentanaReporteHora(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setIconImage(new ImageIcon(getClass().getResource("img/parking(1).png")).getImage());
         this.setLocationRelativeTo(null);
         agregarComponente();
     }
@@ -41,12 +43,12 @@ public class VentanaReporteHora extends javax.swing.JDialog {
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconImage(new ImageIcon(getClass().getResource("img/parking(1).png")).getImage());
         setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(540, 471));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tbl_horas.setBackground(new java.awt.Color(204, 255, 204));
         tbl_horas.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 204, 51)));
         tbl_horas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         tbl_horas.setModel(new javax.swing.table.DefaultTableModel(
@@ -57,7 +59,7 @@ public class VentanaReporteHora extends javax.swing.JDialog {
                 "ID", "HORA", "CANTIDAD DE AUTOS"
             }
         ));
-        tbl_horas.setGridColor(new java.awt.Color(0, 153, 153));
+        tbl_horas.setGridColor(new java.awt.Color(255, 153, 0));
         tbl_horas.setSelectionBackground(new java.awt.Color(255, 255, 255));
         pnl_menu.setViewportView(tbl_horas);
         if (tbl_horas.getColumnModel().getColumnCount() > 0) {
@@ -86,8 +88,9 @@ public class VentanaReporteHora extends javax.swing.JDialog {
 
         jLabelReporte.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
         jLabelReporte.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelReporte.setText("REPORTE");
-        getContentPane().add(jLabelReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+        jLabelReporte.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelReporte.setText("REPORTE DE HORAS");
+        getContentPane().add(jLabelReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 540, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/qPexDF.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 480));
