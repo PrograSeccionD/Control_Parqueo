@@ -85,6 +85,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         A.setContentAreaFilled(false);
+        A.setEnabled(false);
         A.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AActionPerformed(evt);
@@ -93,6 +94,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(A, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
 
         B.setContentAreaFilled(false);
+        B.setEnabled(false);
         B.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BActionPerformed(evt);
@@ -101,6 +103,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(B, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
 
         C.setContentAreaFilled(false);
+        C.setEnabled(false);
         C.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CActionPerformed(evt);
@@ -109,6 +112,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(C, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
 
         D.setContentAreaFilled(false);
+        D.setEnabled(false);
         D.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DActionPerformed(evt);
@@ -117,6 +121,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(D, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
 
         E.setContentAreaFilled(false);
+        E.setEnabled(false);
         E.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EActionPerformed(evt);
@@ -125,6 +130,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(E, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
 
         F.setContentAreaFilled(false);
+        F.setEnabled(false);
         F.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FActionPerformed(evt);
@@ -133,6 +139,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(F, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, -1));
 
         G.setContentAreaFilled(false);
+        G.setEnabled(false);
         G.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GActionPerformed(evt);
@@ -141,6 +148,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(G, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, -1, -1));
 
         H.setContentAreaFilled(false);
+        H.setEnabled(false);
         H.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HActionPerformed(evt);
@@ -149,6 +157,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(H, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, -1, -1));
 
         I.setContentAreaFilled(false);
+        I.setEnabled(false);
         I.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IActionPerformed(evt);
@@ -157,6 +166,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(I, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, -1, -1));
 
         J.setContentAreaFilled(false);
+        J.setEnabled(false);
         J.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JActionPerformed(evt);
@@ -165,6 +175,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(J, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
 
         K.setContentAreaFilled(false);
+        K.setEnabled(false);
         K.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 KActionPerformed(evt);
@@ -173,6 +184,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(K, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
         L.setContentAreaFilled(false);
+        L.setEnabled(false);
         L.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LActionPerformed(evt);
@@ -181,6 +193,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(L, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
 
         M.setContentAreaFilled(false);
+        M.setEnabled(false);
         M.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MActionPerformed(evt);
@@ -189,6 +202,7 @@ public class Sotano1 extends javax.swing.JDialog {
         getContentPane().add(M, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
 
         F1.setContentAreaFilled(false);
+        F1.setEnabled(false);
         F1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 F1ActionPerformed(evt);
@@ -298,6 +312,7 @@ public class Sotano1 extends javax.swing.JDialog {
 
         jLabelContainer.setBackground(new java.awt.Color(0, 153, 204));
         jLabelContainer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/plainwhite.png"))); // NOI18N
+        jLabelContainer.setEnabled(false);
         getContentPane().add(jLabelContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 380, 180));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/control_estacionamiento/frame/img/black-holes.jpg"))); // NOI18N

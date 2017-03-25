@@ -17,6 +17,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import org.control_estacionamiento.bean.Parqueo;
 import org.control_estacionamiento.bean.Tarifa;
 import org.control_estacionamiento.bean.Ticket;
@@ -30,6 +31,7 @@ import org.control_estacionamiento.controlador.ControladorTicket;
 public class VentanaEntrada extends javax.swing.JDialog {
 
     protected SimpleDateFormat timeFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
+    ControladorTicket ctl_ticket = new ControladorTicket().getInstance();
     private Parqueo parqueo_disponible;
     private Date currentTime;
     DateFormat datehora = new SimpleDateFormat("HH");
@@ -96,6 +98,11 @@ public class VentanaEntrada extends javax.swing.JDialog {
         getContentPane().add(lbl_parqueo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 150, -1));
 
         txt_placa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_placa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_placaKeyPressed(evt);
+            }
+        });
         getContentPane().add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 120, -1));
 
         txt_parqueo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -186,29 +193,34 @@ public class VentanaEntrada extends javax.swing.JDialog {
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
         try {
             BufferedWriter rep = new BufferedWriter(new FileWriter("reporte.txt", true));
+            if (ctl_ticket.verificarPlaca(txt_placa.getText())) {
+                JOptionPane.showMessageDialog(this,
+                    "Vehículo con placas iguales.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            } else {
+                if (parqueo_disponible != null) {
+                    Ticket ticket = new Ticket();
+                    ticket.setId(ctl_ticket.getListadoTicket().size() + 1);
+                    ticket.setHoraEntrada(currentTime);
+                    ticket.setPlaca(txt_placa.getText());
+                    ticket.setParqueo(parqueo_disponible);
+                    ticket.setTarifa(Tarifa.getTarifa());
+                    parqueo_disponible.setDisponible(false);
+                    ctl_ticket.agregarTicket(ticket);
 
-            if (parqueo_disponible != null) {
-                ControladorTicket ctl_ticket = new ControladorTicket().getInstance();
-                Ticket ticket = new Ticket();
-                ticket.setId(ctl_ticket.getListadoTicket().size() + 1);
-                ticket.setHoraEntrada(currentTime);
-                ticket.setPlaca(txt_placa.getText());
-                ticket.setParqueo(parqueo_disponible);
-                ticket.setTarifa(Tarifa.getTarifa());
-                parqueo_disponible.setDisponible(false);
-                ctl_ticket.agregarTicket(ticket);
+                    rep.write(datehora.format(date) + ",");
+                    rep.write(dateFormat.format(date) + ",");
+                    rep.write(txt_placa.getText());
+                    rep.newLine();
+                    rep.close();
 
-                rep.write(datehora.format(date) + ",");
-                rep.write(dateFormat.format(date) + ",");
-                rep.write(txt_placa.getText());
-                rep.newLine();
-                rep.close();
-                
+                }
+                this.dispose();
+                VentanaPrincipal regreso = new VentanaPrincipal();
+                regreso.setVisible(true);
+                this.setVisible(false);
             }
-            this.dispose();
-            VentanaPrincipal regreso = new VentanaPrincipal();
-            regreso.setVisible(true);
-            this.setVisible(false);
         } catch (IOException e) {
             System.out.println("ERROR");
         }
@@ -228,6 +240,13 @@ public class VentanaEntrada extends javax.swing.JDialog {
         cancelar.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void txt_placaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_placaKeyPressed
+        btn_guardar.setEnabled(false);
+        if ((parqueo_disponible != null) && txt_placa.getText() != null) {
+            btn_guardar.setEnabled(true);
+        }
+    }//GEN-LAST:event_txt_placaKeyPressed
 
     /**
      * @param args the command line arguments
@@ -273,7 +292,8 @@ public class VentanaEntrada extends javax.swing.JDialog {
 
     public void agregarComponente() {
         this.setLocationRelativeTo(null);
-
+        
+        btn_guardar.setEnabled(false);
         // HORA ENTRADA
         Calendar currentCalendar = Calendar.getInstance();
         currentTime = currentCalendar.getTime();

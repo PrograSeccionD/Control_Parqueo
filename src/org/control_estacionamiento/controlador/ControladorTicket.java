@@ -43,6 +43,14 @@ public class ControladorTicket {
         return result;
     }
     
+    public boolean verificarPlaca(String placa) {
+        for (Ticket ticket : listadoTicket) {
+            if (ticket.getPlaca().equals(placa)) {
+                return true;
+            }
+        }    
+        return false;
+    }
     
 
     public void setListadoTicket(ArrayList<Ticket> listadoTicket) {

@@ -56,14 +56,22 @@ public class VentanaTarifa extends javax.swing.JDialog {
 
         lbl_placa.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lbl_placa.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_placa.setText("PLACA");
-        getContentPane().add(lbl_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 70, 74));
+        lbl_placa.setText("PRECIO POR MINUTO");
+        getContentPane().add(lbl_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 150, 74));
 
         txt_tarifa.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         txt_tarifa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_tarifa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_tarifaActionPerformed(evt);
+            }
+        });
+        txt_tarifa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_tarifaKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_tarifaKeyTyped(evt);
             }
         });
         getContentPane().add(txt_tarifa, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 200, 74));
@@ -143,13 +151,9 @@ public class VentanaTarifa extends javax.swing.JDialog {
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
        Tarifa t = new Tarifa();
-       int tarifa = 0;
-       if (!txt_tarifa.getText().equals("")) {
-            tarifa = Integer.parseInt(txt_tarifa.getText());
-       } 
+       int tarifa = Integer.parseInt(txt_tarifa.getText());
        t.setTarifa(tarifa);
-       
-       
+
        VentanaPrincipal regresar = new VentanaPrincipal();
        regresar.setVisible(true);
        this.setVisible(false);
@@ -167,6 +171,23 @@ public class VentanaTarifa extends javax.swing.JDialog {
         regresar.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
+
+    private void txt_tarifaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_tarifaKeyTyped
+        // TODO add your handling code here:
+        char caracter = evt.getKeyChar();
+
+        // Verificar si la tecla pulsada no es un digito
+        if(((caracter < '0') ||
+           (caracter > '9')) &&
+           (caracter != '\b' /*corresponde a BACK_SPACE*/))
+        {
+           evt.consume();  // ignorar el evento de teclado
+        }
+    }//GEN-LAST:event_txt_tarifaKeyTyped
+
+    private void txt_tarifaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_tarifaKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_tarifaKeyPressed
 
     /**
      * @param args the command line arguments
